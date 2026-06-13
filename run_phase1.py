@@ -4,7 +4,7 @@ run_phase1.py
 Phase 1: proves the machinery works end to end.
 No agents yet. Runs baselines and reports honest metrics per regime.
 
-DATA_SOURCE = "synthetic"  -> works anywhere, no internet needed
+DATA_SOURCE = "yfinance"  -> works anywhere, no internet needed
 DATA_SOURCE = "yfinance"   -> real data, run on your own machine
 """
 
@@ -24,7 +24,7 @@ from harness import run_backtest
 from baselines import BuyAndHold, EqualWeightRebalanced, SingleAssetBuyAndHold
 import metrics
 
-DATA_SOURCE = "synthetic"   # change to "yfinance" on your machine
+DATA_SOURCE = "yfinance"   # change to "yfinance" on your machine
 COST_BPS = 5.0
 INITIAL = 100_000.0
 
