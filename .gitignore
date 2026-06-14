@@ -21,3 +21,4 @@ data/*.csv
 Thumbs.db
 .vscode/
 .idea/
+decision_log*.json

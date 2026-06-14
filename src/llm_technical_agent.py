@@ -13,6 +13,7 @@ Cost control:
 
 from __future__ import annotations
 import json
+from agent_utils import parse_llm_json
 import pandas as pd
 import anthropic
 from indicators import rsi, macd, bollinger_bands, trend_strength
@@ -98,7 +99,7 @@ class LLMTechnicalAgent:
                 messages=[{"role": "user", "content": prompt}],
             )
             raw = response.content[0].text.strip()
-            parsed = json.loads(raw)
+            parsed = parse_llm_json(raw)
             weights = {k: float(v) for k, v in parsed.get("weights", {}).items()
                        if k in self.tickers}
             self.last_reasoning = parsed.get("reasoning", "")
